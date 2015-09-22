@@ -20,7 +20,7 @@
 package org.apache.directory.server.kerberos.pkinit.io;
 
 
-import org.apache.directory.server.kerberos.shared.messages.value.PrincipalName;
+import org.apache.directory.shared.kerberos.components.PrincipalName;
 import org.bouncycastle.asn1.DERSequence;
 
 

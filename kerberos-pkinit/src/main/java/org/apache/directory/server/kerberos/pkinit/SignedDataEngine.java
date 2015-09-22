@@ -25,11 +25,7 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.PrivateKey;
-import java.security.cert.CertStore;
-import java.security.cert.CertStoreException;
-import java.security.cert.Certificate;
-import java.security.cert.CollectionCertStoreParameters;
-import java.security.cert.X509Certificate;
+import java.security.cert.*;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -186,16 +182,23 @@ public class SignedDataEngine
 
         while ( it.hasNext() )
         {
-            SignerInformation signer = it.next();
+            final SignerInformation signer = it.next();
 
-            Collection<? extends Certificate> certCollection = certs.getCertificates( signer.getSID() );
+            //Collection<? extends Certificate> certCollection = certs.getCertificates( signer.getSID() );
+            /*Collection<? extends Certificate> certCollection = certs
+                .getCertificates(new CertSelector() {
+                    @Override
+                    public boolean match(Certificate cert) {
+                        return false; // check cert and signer
+                    }
+                });
             Iterator<? extends Certificate> certIt = certCollection.iterator();
             X509Certificate cert = ( X509Certificate ) certIt.next();
 
             if ( signer.verify( cert.getPublicKey(), "BC" ) )
             {
                 return true;
-            }
+            }*/
         }
 
         return false;

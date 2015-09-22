@@ -25,11 +25,7 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.PrivateKey;
-import java.security.cert.CertStore;
-import java.security.cert.CertStoreException;
-import java.security.cert.Certificate;
-import java.security.cert.CollectionCertStoreParameters;
-import java.security.cert.X509Certificate;
+import java.security.cert.*;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -115,13 +111,20 @@ public class EnvelopedDataEngine
             if ( recipient instanceof KeyTransRecipientInformation )
             {
                 // Match the recipient ID.
-                Collection<? extends Certificate> matches = certStore.getCertificates( recipient.getRID() );
-
+                //Collection<? extends Certificate> matches = certStore.getCertificates( recipient.getRID() );
+                /*
+                Collection<? extends Certificate> matches = certStore
+                    .getCertificates(new CertSelector() {
+                        @Override
+                        public boolean match(Certificate cert) {
+                            return false; // check cert using recipient;
+                        }
+                    });
                 if ( !matches.isEmpty() )
                 {
                     // Decrypt the data.
                     return recipient.getContent( privateKey, "BC" );
-                }
+                }*/
             }
         }
 

@@ -20,8 +20,8 @@
 package org.apache.directory.server.kerberos.pkinit.io;
 
 
-import org.apache.directory.server.kerberos.shared.messages.value.Checksum;
-import org.apache.directory.server.kerberos.shared.messages.value.EncryptionKey;
+import org.apache.directory.shared.kerberos.components.Checksum;
+import org.apache.directory.shared.kerberos.components.EncryptionKey;
 
 
 /**

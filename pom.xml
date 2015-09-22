@@ -125,6 +125,7 @@
     <module>server-integ</module>
     <module>server-config</module>
     <module>service-builder</module>
+    <module>kerberos-pkinit</module>
     <!--Uncomment to build all in one OSGi bundle-->
     <!--<module>osgi</module>-->
     <module>server-jndi</module>

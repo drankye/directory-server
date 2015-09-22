@@ -22,7 +22,7 @@ package org.apache.directory.server.kerberos.pkinit;
 
 import javax.crypto.spec.DHParameterSpec;
 
-import org.apache.directory.server.kerberos.shared.messages.value.KerberosTime;
+import org.apache.directory.shared.kerberos.KerberosTime;
 
 
 /**
